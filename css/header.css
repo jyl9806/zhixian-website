@@ -1,26 +1,64 @@
-/* 导航栏样式 */
+/* 导航栏样式 - 科技感黑白风格 */
+#main-header .navbar {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%) !important;
+    border-bottom: 1px solid #333;
+    box-shadow: 0 2px 20px rgba(0, 255, 255, 0.1);
+}
+
 #main-header .navbar-brand {
-    font-weight: 600;
-    color: #2c3e50;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+}
+
+#main-header .navbar-brand img {
+    filter: brightness(0) invert(1);
+    transition: all 0.3s ease;
+}
+
+#main-header .navbar-brand:hover img {
+    filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(0, 255, 255, 0.6));
 }
 
 #main-header .navbar-nav .nav-link {
-    color: #495057;
+    color: #cccccc;
     font-weight: 500;
-    margin: 0 10px;
+    margin: 0 8px;
     padding: 8px 16px;
-    border-radius: 6px;
+    border-radius: 4px;
     transition: all 0.3s ease;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+#main-header .navbar-nav .nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #00ffff, #0080ff);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
 }
 
 #main-header .navbar-nav .nav-link:hover,
 #main-header .navbar-nav .nav-link.active {
-    color: #007bff;
-    background-color: #e9ecef;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.05);
 }
 
-/* 管理员链接特殊样式 */
-#main-header .navbar-nav .admin-link {
-    color: #dc3545;
-    font-weight: 600;
+#main-header .navbar-nav .nav-link:hover::before,
+#main-header .navbar-nav .nav-link.active::before {
+    width: 80%;
+}
+
+#main-header .navbar-nav .nav-link.active {
+    color: #00ffff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
 }

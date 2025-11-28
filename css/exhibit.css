@@ -1,17 +1,116 @@
-/* 展品卡片布局优化 */
+/* 展品页科技感设计 */
+body {
+    background: #0a0a0a;
+    color: #ffffff;
+}
+
+/* 排序分页区域 */
+.sorting-pagination-section {
+    background: rgba(26, 26, 26, 0.8);
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* 搜索框样式 */
+.search-box .form-control {
+    background: rgba(26, 26, 26, 0.8);
+    border: 1px solid #333;
+    color: #ffffff;
+    border-radius: 4px;
+}
+
+.search-box .form-control:focus {
+    border-color: #00ffff;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    background: rgba(26, 26, 26, 0.9);
+}
+
+.search-box .btn {
+    background: rgba(26, 26, 26, 0.8);
+    border: 1px solid #333;
+    color: #cccccc;
+    border-radius: 4px;
+}
+
+.search-box .btn:hover {
+    background: rgba(0, 255, 255, 0.1);
+    border-color: #00ffff;
+    color: #00ffff;
+}
+
+/* 下拉选择框 */
+.form-select {
+    background: rgba(26, 26, 26, 0.8);
+    border: 1px solid #333;
+    color: #ffffff;
+    border-radius: 4px;
+}
+
+.form-select:focus {
+    border-color: #00ffff;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+/* 分页样式 */
+.pagination .page-link {
+    background: rgba(26, 26, 26, 0.8);
+    border: 1px solid #333;
+    color: #cccccc;
+}
+
+.pagination .page-link:hover {
+    background: rgba(0, 255, 255, 0.1);
+    border-color: #00ffff;
+    color: #00ffff;
+}
+
+.pagination .page-item.active .page-link {
+    background: linear-gradient(135deg, #0080ff, #00ffff);
+    border-color: #00ffff;
+    color: #000;
+    font-weight: 600;
+}
+
+/* 展品卡片样式 */
 .exhibit-card {
     transition: all 0.3s ease;
-    border: none;
+    border: 1px solid #333;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     height: 100%;
-    background: white;
+    background: rgba(26, 26, 26, 0.8);
+    position: relative;
+}
+
+.exhibit-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.05), transparent);
+    transition: left 0.5s ease;
+}
+
+.exhibit-card:hover::before {
+    left: 100%;
 }
 
 .exhibit-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 12px 40px rgba(0, 255, 255, 0.3);
+    border-color: #00ffff;
 }
 
 .exhibit-image-container {
@@ -19,7 +118,7 @@
     width: 100%;
     height: 250px;
     overflow: hidden;
-    background: #f8f9fa;
+    background: #1a1a1a;
 }
 
 .exhibit-image {
@@ -35,68 +134,66 @@
 
 .exhibit-info {
     padding: 1.25rem;
-    text-align: center; /* 名称和用户名居中 */
+    text-align: center;
 }
 
 .exhibit-name {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #333;
+    color: #ffffff;
     margin-bottom: 0.5rem;
     line-height: 1.4;
-    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .exhibit-company {
-    color: #666;
+    color: #cccccc;
     font-size: 0.9rem;
     margin-bottom: 0;
-    text-align: center;
-}
-
-.exhibit-badges {
-    position: absolute;
-    top: 10px;
-    left: 10px;
 }
 
 .exhibit-badges .badge {
+    background: linear-gradient(135deg, #0080ff, #00ffff);
+    color: #000;
+    font-weight: 600;
     font-size: 0.7rem;
-    padding: 4px 8px;
-    margin-bottom: 4px;
+    padding: 6px 10px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-/* 模态框布局优化 */
+/* 模态框样式 */
 #productDetailModal .modal-content {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
     border-radius: 16px;
-    border: none;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    border: 1px solid #333;
+    box-shadow: 0 20px 60px rgba(0, 255, 255, 0.2);
 }
 
 #productDetailModal .modal-header {
-    border-bottom: 1px solid #e9ecef;
+    border-bottom: 1px solid #333;
     padding: 1.5rem 1.5rem 1rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    background: rgba(26, 26, 26, 0.9);
+    color: #00ffff;
     border-radius: 16px 16px 0 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 #productDetailModal .modal-header .btn-close {
-    filter: invert(1);
+    filter: invert(1) brightness(2);
 }
 
 #productDetailModal .modal-body {
     padding: 0;
 }
 
-/* 轮播图样式优化 */
-#productCarousel {
-    border-radius: 0;
-}
-
+/* 轮播图样式 */
 #productCarousel .carousel-inner {
     height: 400px;
-    background: #f8f9fa;
+    background: #1a1a1a;
 }
 
 #productCarousel .product-modal-image {
@@ -109,38 +206,44 @@
 #productCarousel .carousel-control-next {
     width: 50px;
     height: 50px;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid #333;
     border-radius: 50%;
     top: 50%;
     transform: translateY(-50%);
     margin: 0 20px;
+    transition: all 0.3s ease;
 }
 
-/* 信息面板样式优化 */
+#productCarousel .carousel-control-prev:hover,
+#productCarousel .carousel-control-next:hover {
+    background: rgba(0, 255, 255, 0.2);
+    border-color: #00ffff;
+}
+
+/* 信息面板样式 */
 .info-panel {
     padding: 2rem;
-    background: white;
+    background: rgba(26, 26, 26, 0.9);
 }
 
 .info-section {
     margin-bottom: 2rem;
 }
 
-.info-section:last-child {
-    margin-bottom: 0;
-}
-
 .info-section h6 {
-    color: #495057;
+    color: #00ffff;
     font-weight: 600;
     margin-bottom: 0.75rem;
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 8px;
 }
 
 .info-section p {
-    color: #333;
+    color: #cccccc;
     margin-bottom: 1rem;
     line-height: 1.5;
     font-size: 0.95rem;
@@ -153,23 +256,25 @@
 }
 
 .info-item {
-    background: #f8f9fa;
+    background: rgba(255, 255, 255, 0.05);
     padding: 1rem;
     border-radius: 8px;
-    border-left: 4px solid #667eea;
+    border-left: 4px solid #00ffff;
 }
 
 .info-item label {
     font-size: 0.8rem;
-    color: #666;
+    color: #999;
     margin-bottom: 0.25rem;
     display: block;
     font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .info-item .value {
     font-size: 0.95rem;
-    color: #333;
+    color: #ffffff;
     font-weight: 500;
 }
 
@@ -183,10 +288,14 @@
 
 .spec-item {
     text-align: center;
-    padding: 1rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    padding: 1.5rem 1rem;
+    background: linear-gradient(135deg, #0080ff, #00ffff);
+    color: #000;
     border-radius: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);
 }
 
 .spec-item .label {
@@ -197,7 +306,23 @@
 
 .spec-item .value {
     font-size: 1rem;
+    font-weight: 700;
+}
+
+/* 模态框按钮 */
+.modal-footer .btn {
+    background: rgba(26, 26, 26, 0.8);
+    border: 1px solid #333;
+    color: #cccccc;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     font-weight: 600;
+}
+
+.modal-footer .btn:hover {
+    background: rgba(0, 255, 255, 0.1);
+    border-color: #00ffff;
+    color: #00ffff;
 }
 
 /* 空状态和加载状态 */
@@ -206,10 +331,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background: rgba(26, 26, 26, 0.8);
+    border: 1px solid #333;
+    border-radius: 12px;
 }
 
 .prompt-content {
     max-width: 400px;
+}
+
+.prompt-content h4 {
+    color: #00ffff;
+}
+
+.prompt-content p {
+    color: #cccccc;
 }
 
 /* 响应式调整 */
@@ -218,29 +354,7 @@
         height: 200px;
     }
     
-    #productCarousel .carousel-inner {
-        height: 300px;
-    }
-    
     .info-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .specifications-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (max-width: 576px) {
-    .exhibit-info {
-        padding: 1rem;
-    }
-    
-    .info-panel {
-        padding: 1.5rem;
-    }
-    
-    .specifications-grid {
         grid-template-columns: 1fr;
     }
 }
