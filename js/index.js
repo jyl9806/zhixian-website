@@ -14,19 +14,14 @@ function initializeDownloadButtons() {
     const directDownloadBtn = document.getElementById('direct-download');
     const cloudDownloadBtn = document.getElementById('cloud-download');
 
-    // 直连下载功能 - 使用本地文件
+    // 直连下载功能 
     if (directDownloadBtn) {
         directDownloadBtn.addEventListener('click', function () {
-            // 使用Sealos Cloud对象存储
-            const downloadUrl = '';
+            // 直连下载链接
+            const downloadUrl = 'https://objectstorageapi.hzh.sealos.run/6u3wazcw-zhixiantech/software/xxx.exe';
 
-            // 创建隐藏的下载链接
-            const link = document.createElement('a');
-            link.href = downloadUrl;
-            link.download = '织弦科技全成型编织仿真系统.zip';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+            // 直接跳转到下载链接
+            window.location.href = downloadUrl;
 
             // 显示下载提示
             showDownloadToast('软件下载已开始，请稍候...');
@@ -37,7 +32,7 @@ function initializeDownloadButtons() {
     if (cloudDownloadBtn) {
         cloudDownloadBtn.addEventListener('click', function () {
             // 具体网盘链接
-            const cloudUrl = '';
+            const cloudUrl = 'xxx';
             window.open(cloudUrl, '_blank');
             
             // 显示下载提示
@@ -47,34 +42,33 @@ function initializeDownloadButtons() {
 }
 
 // ========== 轮播图配置数据 ==========
-// 使用Sealos Cloud对象存储来存放对应界面图片
 const carouselData = [
     {
-        src: "images/carousel/process-interface.png",
+        src: "https://objectstorageapi.hzh.sealos.run/6u3wazcw-zhixiantech/images/interface-images/process.png",
         alt: "工艺界面图片",
         title: "工艺设计界面",
         description: "直观的工艺参数设置和吓数管理"
     },
     {
-        src: "images/carousel/shaping-interface.png", 
+        src: "https://objectstorageapi.hzh.sealos.run/6u3wazcw-zhixiantech/images/interface-images/shaping.png", 
         alt: "成型界面图片",
         title: "成型设计界面",
         description: "智能成型动作编辑和预览"
     },
     {
-        src: "images/carousel/pattern-interface.png",
+        src: "https://objectstorageapi.hzh.sealos.run/6u3wazcw-zhixiantech/images/interface-images/pattern.png",
         alt: "花样界面图片", 
         title: "花样设计界面",
         description: "丰富的花样库和自定义设计"
     },
     {
-        src: "images/carousel/simulation-interface.png",
+        src: "https://objectstorageapi.hzh.sealos.run/6u3wazcw-zhixiantech/images/interface-images/simulation.png",
         alt: "仿真界面图片",
         title: "实时仿真界面", 
         description: "高精度布料物理特性仿真"
     },
     {
-        src: "images/carousel/compilation-interface.png",
+        src: "https://objectstorageapi.hzh.sealos.run/6u3wazcw-zhixiantech/images/interface-images/compilation.png",
         alt: "上机编译界面图片",
         title: "上机编译界面",
         description: "一键生成横机可执行文件"
