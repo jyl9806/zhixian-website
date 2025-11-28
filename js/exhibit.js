@@ -1,4 +1,4 @@
-// exhibit.js - 使用JSON索引文件的版本
+// exhibit.js
 document.addEventListener('DOMContentLoaded', initializeExhibitPage);
 
 // ========== 全局变量 ==========
@@ -109,7 +109,6 @@ async function fetchExhibitsFromIndex() {
                     description: productInfo.description,
                     uploadTime: productInfo.uploadTime,
                     specifications: productInfo.specifications,
-                    views: Math.floor(Math.random() * 100),
                     folder: exhibit.folder
                 };
             } catch (error) {
@@ -125,7 +124,6 @@ async function fetchExhibitsFromIndex() {
                     social: '未提供',
                     description: '该展品信息加载失败',
                     uploadTime: '未知时间',
-                    views: 0,
                     folder: exhibit.folder
                 };
             }
@@ -189,9 +187,6 @@ function createProductCard(product) {
                      class="exhibit-image"
                      loading="lazy"
                      onerror="handleProductImageError(this)">
-                <div class="exhibit-views">
-                    <i class="bi bi-eye"></i> ${product.views}
-                </div>
                 ${product.specifications ? `
                 <div class="exhibit-badges">
                     <span class="badge bg-primary">${product.specifications.technique}</span>
@@ -275,18 +270,6 @@ function openProductModal(product) {
     });
     
     modal.show();
-    
-    // 增加浏览量
-    product.views++;
-    
-    // 更新显示的产品卡片
-    const productCard = document.querySelector(`[data-product-id="${product.id}"]`);
-    if (productCard) {
-        const viewsElement = productCard.querySelector('.exhibit-views');
-        if (viewsElement) {
-            viewsElement.innerHTML = `<i class="bi bi-eye"></i> ${product.views}`;
-        }
-    }
 }
 
 // ========== 创建产品卡片 - 优化版 ==========
