@@ -1,0 +1,13 @@
+/* 页脚样式 */
+#main-footer {
+    background-color: #343a40 !important;
+}
+
+#main-footer p {
+    margin-bottom: 0.5rem;
+}
+
+#main-footer .contact-info {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}

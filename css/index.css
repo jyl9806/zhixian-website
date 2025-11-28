@@ -1,0 +1,323 @@
+/* 主页内容样式 */
+.promotion-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 1px solid #dee2e6 !important;
+    position: relative;
+    min-height: 500px;
+}
+
+/* 下载卡片样式 */
+.download-section-corner {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 180px;
+    z-index: 10;
+}
+
+.download-card {
+    background: white !important;
+    border: 1px solid #ced4da !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.download-buttons .btn {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    transition: all 0.3s ease;
+}
+
+.download-buttons .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 活动内容样式 */
+.activity-content h2 {
+    font-weight: 700;
+    color: #2c3e50;
+    font-size: 2.5rem;
+}
+
+.activity-content h4 {
+    font-weight: 500;
+    color: #6c757d;
+    font-size: 1.5rem;
+}
+
+.highlights .badge {
+    font-size: 0.8rem;
+    padding: 8px 12px;
+    font-weight: 500;
+}
+
+/* 轮播图样式 - 调整大小 */
+.carousel-section {
+    max-width: 1000px; /* 增加最大宽度 */
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1); /* 添加阴影增强视觉效果 */
+}
+
+.carousel-image {
+    object-fit: cover;
+    height: 550px; /* 增加高度 */
+    background-color: #f8f9fa;
+    transition: opacity 0.5s ease; /* 添加过渡效果 */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    margin: 0 10px;
+    transition: background 0.3s ease;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    padding: 20px;
+    bottom: 30px;
+}
+
+.carousel-caption h5 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.carousel-caption p {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+
+/* 轮播图占位符样式 */
+.carousel-placeholder {
+    height: 550px; /* 同步增加占位符高度 */
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    color: #6c757d;
+    border-radius: 8px;
+}
+
+.carousel-placeholder .spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+
+/* 产品特性卡片样式 */
+.feature-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: white;
+    height: 100%;
+    border-radius: 12px;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.feature-card h5 {
+    color: #2c3e50;
+    margin-bottom: 12px;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.feature-icon {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-icon .bi {
+    opacity: 0.9;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-icon .bi {
+    transform: scale(1.1);
+}
+
+/* 倒计时样式 */
+#countdown {
+    color: #dc3545;
+    font-size: 1.2em;
+}
+
+/* 列表组样式 */
+.list-group-item {
+    border: 1px solid #dee2e6;
+    padding: 12px 15px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.list-group-item:hover {
+    background-color: #f8f9fa;
+}
+
+/* 进度条动画 */
+.carousel-progress {
+    transition: width 0.6s ease;
+    background: linear-gradient(90deg, #007bff, #0056b3);
+}
+
+.carousel-progress-container {
+    max-width: 1000px; /* 同步增加进度条容器宽度 */
+    margin: 0 auto;
+}
+
+/* 确保特性卡片高度一致 */
+.features-section .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.features-section .col-lg-3 {
+    display: flex;
+    margin-bottom: 1.5rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 992px) {
+    .carousel-image {
+        height: 450px; /* 中等屏幕调整高度 */
+    }
+    
+    .carousel-placeholder {
+        height: 450px;
+    }
+}
+
+@media (max-width: 768px) {
+    .download-section-corner {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .download-card {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    .carousel-image {
+        height: 350px; /* 平板端调整高度 */
+    }
+    
+    .carousel-placeholder {
+        height: 350px;
+    }
+    
+    .activity-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .activity-content h4 {
+        font-size: 1.2rem;
+    }
+    
+    .carousel-caption {
+        padding: 15px;
+        bottom: 20px;
+    }
+    
+    .carousel-caption h5 {
+        font-size: 1.2rem;
+    }
+    
+    .carousel-caption p {
+        font-size: 1rem;
+    }
+    
+    /* 移动端产品特性改为2列 */
+    .features-section .col-md-6 {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    /* 小屏移动端产品特性改为1列 */
+    .features-section .col-12 {
+        margin-bottom: 1rem;
+    }
+    
+    .promotion-section {
+        padding: 1rem !important;
+    }
+    
+    .activity-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .list-group-item {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+    
+    .carousel-image {
+        height: 250px; /* 手机端调整高度 */
+    }
+    
+    .carousel-placeholder {
+        height: 250px;
+    }
+    
+    .carousel-caption {
+        padding: 10px;
+        bottom: 15px;
+    }
+    
+    .carousel-caption h5 {
+        font-size: 1rem;
+    }
+    
+    .carousel-caption p {
+        font-size: 0.9rem;
+    }
+}
+
+/* 无障碍访问改进 */
+@media (prefers-reduced-motion: reduce) {
+    .feature-card,
+    .download-buttons .btn,
+    .feature-icon .bi,
+    .carousel-image {
+        transition: none;
+    }
+}
+
+/* 深色模式支持 */
+@media (prefers-color-scheme: dark) {
+    .feature-card,
+    .download-card {
+        background: #2d3748 !important;
+        color: #e2e8f0;
+    }
+    
+    .feature-card h5 {
+        color: #e2e8f0;
+    }
+}
+
+/* 图片懒加载相关样式 */
+img[data-src] {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+img.fade-in {
+    opacity: 1;
+}
